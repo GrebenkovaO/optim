@@ -17,14 +17,14 @@ $$
 In the Newton method, the $$s_k$$ direction (Newton's direction) is set by the linear system solution at each step:
 
 $$
-s_k = - B_k\nabla f(x_k), \;\;\; B_k = f_{xx}^{-1}(x_k)
+s_k = - B_k\nabla f(x_k), \;\;\; B_k = [f_{xx}^{''}]^{-1}(x_k)
 $$
 
 i.e. at each iteration it is necessary to **compensate** hessian and gradient and **resolve** linear system.
 
 Note here that if we take a single matrix of $$B_k = I_n$$ as $$B_k$$ at each step, we will exactly get the gradient descent method.
 
-The general scheme of quasi-Newton methods is based on the selection of the $$B_k$$ matrix so that it tends in some sense at $$k \to \infty$$ to the true value of inverted Hessian in the local optimum $$f_{xx}^{-1}(x_*)$$. 
+The general scheme of quasi-Newton methods is based on the selection of the $$B_k$$ matrix so that it tends in some sense at $$k \to \infty$$ to the true value of inverted Hessian in the local optimum $$[f_{xx}^{''}]^{-1}(x_*)$$. 
 Let's consider several schemes using iterative updating of $B_k$ matrix in the following way:
 
 $$
@@ -34,7 +34,7 @@ $$
 Then if we use Taylor's approximation for the first order gradient, we get it:
 
 $$
-\nabla f(x_k) - \nabla f(x_{k+1}) \approx f_{xx}(x_{k+1}) (x_k - x_{k+1}).
+\nabla f(x_k) - \nabla f(x_{k+1}) \approx f_{xx}^{''}(x_{k+1}) (x_k - x_{k+1}).
 $$
 
 Now let's formulate our method as:
