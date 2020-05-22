@@ -136,7 +136,7 @@ $$
 Then 
 
 $$
-\phi_1(x) \leq f(x) \leq \phi_2(x) \forall x \in \mathbb{R}^n.
+\phi_1(x) \leq f(x) \leq \phi_2(x) \quad \forall x \in \mathbb{R}^n.
 $$
 
 Now, if we have global upper bound on the function, in a form of parabola, we can try to go directly to its minimum.
@@ -154,7 +154,7 @@ $$
 
 This way leads to the $$\frac{1}{L}$$ stepsize choosing. However, often the $$L$$ constant is not known.
 
-But if the function is twice continuously differentiable and its gradient has Lipchitz constant $$L$$, we can derive a way to estimate this constant $$\forall x \in \mathbb{R}^n$$:
+But if the function is twice continuously differentiable and its gradient has Lipschitz constant $$L$$, we can derive a way to estimate this constant $$\forall x \in \mathbb{R}^n$$:
 
 $$
 \|\nabla^2 f(x) \| \leq L
